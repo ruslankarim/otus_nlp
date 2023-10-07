@@ -65,4 +65,4 @@ def get_link_solutions(list_link_element):
         return [el.attrs['href'] for el in list_link_element]
 
 
-collect_links_solution_by_month(date(2023, 2, 1), 1, params_map)
+collect_links_solution_by_month(date(2023, 8, 1), 1, params_map)
