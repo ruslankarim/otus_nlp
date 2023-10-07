@@ -38,7 +38,7 @@ def collect_links_solution_by_month(start_day, num_months_frward, params_arg):
             response = get_rendered(host + params)
             list_html_elements = get_html_solutions(response, selector)
             list_link_str = get_link_solutions(list_html_elements)
-            with open('parsing/links_solutions', 'a') as file:
+            with open('links_solutions.txt', 'a') as file:
                 for link in list_link_str: file.write(link + '\n')
             file.close()
             next_page = response.html.find('.page-next > a', first=True)
@@ -65,4 +65,4 @@ def get_link_solutions(list_link_element):
         return [el.attrs['href'] for el in list_link_element]
 
 
-# collect_links_solution_by_month(date(2023, 2, 1), 9, params_map)
+collect_links_solution_by_month(date(2023, 2, 1), 1, params_map)
