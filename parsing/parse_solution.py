@@ -28,17 +28,5 @@ def pull_solution():
                 wfile.write(avoid_comma + '\n')
                 wfile.close()
         file.close()
-        # response = session.get(host + params, verify=False)
-    # response.html.render()
-    # html = response.text
-    # soup = BeautifulSoup(response.html.raw_html, "html.parser")
-    # c = soup.find(class_=selector)
-    # solution = ' '.join(c.get_text(strip=True, separator=' ').split(' Суд: АС города Москвы ')[0].split())
-    # avoid_dot = re.sub(' \. ', '. ', solution)
-    # avoid_comma = re.sub(' , ', ', ', avoid_dot)
-    #
-    #
-    # print(avoid_comma)
-
 
 pull_solution()
