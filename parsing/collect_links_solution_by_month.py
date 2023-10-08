@@ -39,13 +39,13 @@ def collect_links_solution_by_month(start_day, num_months_frward, params_arg):
             response = get_rendered(host + params)
             list_html_elements = get_html_solutions(response, selector)
             list_link_str = get_link_solutions(list_html_elements)
-            with open('parsing/links_solutions_spb.txt', 'r') as rfile:
+            with open('data/links_solutions_spb.txt', 'r') as rfile:
                 set_links = set(rfile.readlines())
             rfile.close()
             for link in list_link_str:
                 link = link.split('/?')[0] + '\n'
                 if link not in set_links:
-                    with open('parsing/links_solutions_spb.txt', 'a') as file:
+                    with open('data/links_solutions_spb.txt', 'a') as file:
                         file.write(link)
                     file.close()
             next_page = response.html.find('.page-next > a', first=True)

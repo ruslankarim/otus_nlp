@@ -24,7 +24,7 @@ def pull_solution():
             solution = ' '.join(c.get_text(strip=True, separator=' ').split(' Суд: АС города Москвы ')[0].split())
             avoid_dot = re.sub(' \. ', '. ', solution)
             avoid_comma = re.sub(' , ', ', ', avoid_dot)
-            with open(f'parsing/dataset.txt', 'a') as wfile:
+            with open(f'data/dataset.txt', 'a') as wfile:
                 wfile.write(avoid_comma + '\n')
                 wfile.close()
         file.close()
